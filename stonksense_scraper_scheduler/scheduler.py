@@ -25,14 +25,17 @@ def load_schedule(path):
 
 
 def scrap(key, query):
-
+    print('------------------------------------------')
+    print(datetime.strftime(datetime.now(), '%Y%b%d-%HH%MM%SS'))
     print('scraping query: {};'.format(query))
 
     try:
+        print('connect to scraperhub;')
         client = ScrapinghubClient(key)
         project = client.get_project(client.projects.list()[0])
         spider = project.spiders.get('newsapi_spider')
 
+        print('run job;')
         now = datetime.now()
         from_date = datetime.strftime(datetime.strftime(now.date(), '%Y-%m-%d'))
         to_date = datetime.strftime(datetime.strftime((now - timedelta(days=1)).date(), '%Y-%m-%d'))
@@ -49,7 +52,8 @@ def scrap(key, query):
 
 
 def eod_cleanup(key):
-
+    print('------------------------------------------')
+    print(datetime.strftime(datetime.now(), '%Y%b%d-%HH%MM%SS'))
     print('End of day clean-up;')
 
     try:
