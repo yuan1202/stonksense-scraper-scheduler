@@ -84,6 +84,7 @@ def main():
     
     # setup schedule
     for itm in schedule_input:
+        print(itm, end='\n')
         schedule.every().day.at(itm['time']).do(
             partial(
                 scrap,
