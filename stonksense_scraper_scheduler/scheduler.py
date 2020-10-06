@@ -4,6 +4,7 @@ from functools import partial
 import argparse
 import csv
 from scrapinghub import ScrapinghubClient
+import schedule
 
 
 def load_schedule(path):
@@ -71,10 +72,10 @@ def main():
     args = parser.parse_args()
 
     # load schedule file
-    schedule = load_schedule(args.file)
+    schedule_input = load_schedule(args.file)
     
     # setup schedule
-    for itm in schedule:
+    for itm in schedule_input:
         schedule.every().day.at(itm['time']).do(
             partial(
                 scrap,
