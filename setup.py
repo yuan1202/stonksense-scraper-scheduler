@@ -8,5 +8,6 @@ setup(
     install_requires=[
         'schedule',
         'scrapinghub',
+        'msgpack-python',
     ],
 )

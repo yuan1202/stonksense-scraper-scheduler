@@ -37,8 +37,8 @@ def scrap(key, query):
 
         print('run job;')
         now = datetime.now()
-        from_date = datetime.strftime(datetime.strftime(now.date(), '%Y-%m-%d'))
-        to_date = datetime.strftime(datetime.strftime((now - timedelta(days=1)).date(), '%Y-%m-%d'))
+        from_date = datetime.strftime(now.date(), '%Y-%m-%d')
+        to_date = datetime.strftime((now - timedelta(days=1)).date(), '%Y-%m-%d')
 
         spider.jobs.run(query=query, from_date=from_date, to_date=to_date)
 
