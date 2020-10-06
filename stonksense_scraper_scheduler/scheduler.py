@@ -46,6 +46,7 @@ def scrap(key, query):
             time.sleep(1)
             
         client.close(10)
+        print('job closed;')
     
     except Exception as e:
         print(e)
