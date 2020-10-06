@@ -26,6 +26,8 @@ def load_schedule(path):
 
 def scrap(key, query):
 
+    print('scraping query: {};'.format(query))
+
     try:
         client = ScrapinghubClient(key)
         project = client.get_project(client.projects.list()[0])
@@ -47,6 +49,8 @@ def scrap(key, query):
 
 
 def eod_cleanup(key):
+
+    print('End of day clean-up;')
 
     try:
         client = ScrapinghubClient(key)
