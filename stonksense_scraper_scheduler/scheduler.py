@@ -86,5 +86,9 @@ def main():
     # setup clean-up job
     schedule.every().day.at('23:59').do(eod_cleanup)
 
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
 if __name__ == '__main__':
     main()
